@@ -10,9 +10,17 @@ class InputForm extends Component {
   }
 
   render() {
+    const { fullName, handler } = this.props;
     return (
       <>
-        <InputField placeholder="full name" value={this.props.fullName} onChange={this.props.handler}/>
+        <InputField
+          placeholder="full name"
+          value={fullName}
+          onChange={handler}
+          fieldId="full-name"
+          category="personal"
+          field="fullName"
+        />
       </>
     );
   }

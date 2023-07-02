@@ -6,10 +6,18 @@ class InputField extends Component {
   }
 
   render() {
-    const { placeholder, value, onChange } = this.props;
+    const { placeholder, value, onChange, fieldId, category, field } = this.props;
     return (
       <>
-        <input type="text" placeholder={placeholder} value={value} onChange={(e) => onChange(e)}></input>
+        <input
+          type="text"
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChange(e)}
+          id={fieldId}
+          data-category={category}
+          data-field={field}
+        ></input>
       </>
     );
   }

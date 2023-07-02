@@ -13,7 +13,6 @@ InputForm
   -Personal details
     -Full name
     -title
-    -phone number
     -mail
     -location
     -description
@@ -27,7 +26,7 @@ InputForm
     -add / delete
 
   -Education
-    -department name
+    -department
     -school name
     -start date
     -end date
