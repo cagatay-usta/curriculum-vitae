@@ -56,6 +56,7 @@ class App extends Component {
   }
 
   onChangeHandler(e) {
+    // TODO: set logic for multiple or none state items like work and education
     const category = e.target.getAttribute("data-category");
     const field = e.target.getAttribute("data-field");
     this.setState({
@@ -71,7 +72,9 @@ class App extends Component {
   render() {
     return (
       <InputForm
-        fullName={this.state.personal.fullName}
+        personal={this.state.personal}
+        work={this.state.work}
+        education={this.state.education}
         handler={this.onChangeHandler}
       />
     );
