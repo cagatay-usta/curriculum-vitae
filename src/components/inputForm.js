@@ -8,6 +8,7 @@ class InputForm extends Component {
   constructor(props) {
     super(props);
   }
+  //TODO: iterate over each object key to display inputfields
 
   render() {
     const { personal, work, education, handler } = this.props;
@@ -23,6 +24,7 @@ class InputForm extends Component {
         />
 
         <div id="work-input-container">
+          
           {work.map((item, index) => {
             return (
               <div key={index}>
