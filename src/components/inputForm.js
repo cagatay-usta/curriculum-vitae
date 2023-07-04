@@ -24,7 +24,6 @@ class InputForm extends Component {
         />
 
         <div id="work-input-container">
-          
           {work.map((item, index) => {
             return (
               <div key={index}>
@@ -33,8 +32,9 @@ class InputForm extends Component {
                   value={item.company}
                   onChange={handler}
                   fieldId={`company${index}`}
-                  category="personal"
-                  field="fullName"
+                  category="work"
+                  field="company"
+                  position={index}
                 />
               </div>
             );

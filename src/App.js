@@ -59,12 +59,21 @@ class App extends Component {
     // TODO: set logic for multiple or none state items like work and education
     const category = e.target.getAttribute("data-category");
     const field = e.target.getAttribute("data-field");
-    this.setState({
-      [category]: {
-        ...this.state[category],
-        [field]: e.target.value,
-      },
-    });
+    const number = e.target.getAttribute("data-position");
+    if (!number) {
+      this.setState({
+        [category]: {
+          ...this.state[category],
+          [field]: e.target.value,
+        },
+      });
+    } else {
+      this.setState({
+        [category]: [...this.state[category], (this.state[category][number][field])],
+      });
+      // DEBUG
+      console.log(this.state[category][number]);
+    }
     // DEBUG
     console.log(this.state);
   }

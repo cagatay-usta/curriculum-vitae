@@ -6,7 +6,8 @@ class InputField extends Component {
   }
 
   render() {
-    const { placeholder, value, onChange, fieldId, category, field } = this.props;
+    const { placeholder, value, onChange, fieldId, category, field, position } =
+      this.props;
     return (
       <>
         <input
@@ -17,6 +18,7 @@ class InputField extends Component {
           id={fieldId}
           data-category={category}
           data-field={field}
+          data-position={position}
         ></input>
       </>
     );
