@@ -24,20 +24,22 @@ class InputForm extends Component {
         />
 
         <div id="work-input-container">
-          {work.map((item, index) => {
-            return (
-              <div key={index}>
-                <InputField
-                  placeholder="company"
-                  value={item.company}
-                  onChange={handler}
-                  fieldId={`company${index}`}
-                  category="work"
-                  field="company"
-                  position={index}
-                />
-              </div>
-            );
+          {work.map((listItem, index) => {
+            return Object.keys(listItem).map((item, number) => {
+              return (
+                <div key={number}>
+                  <InputField
+                    placeholder={item}
+                    value={listItem[item]}
+                    onChange={handler}
+                    category="work"
+                    field={item}
+                    fieldId={`work-${item}${index}${number}`}
+                    position={index}
+                  />
+                </div>
+              );
+            });
           })}
         </div>
       </>

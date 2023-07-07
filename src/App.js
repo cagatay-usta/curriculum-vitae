@@ -71,8 +71,10 @@ class App extends Component {
         const newCategory = [...prevState[category]];
         newCategory[number][field] = e.target.value;
         return { [category]: newCategory };
-      })
+      });
     }
+    // DEBUG
+    console.log(this.state[category]);
   }
 
   render() {
