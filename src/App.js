@@ -75,8 +75,6 @@ class App extends Component {
         return { [category]: newCategory };
       });
     }
-    // DEBUG
-    console.log(this.state[category]);
   }
 
   render() {

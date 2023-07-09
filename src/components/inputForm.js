@@ -8,7 +8,6 @@ class InputForm extends Component {
   constructor(props) {
     super(props);
   }
-  //TODO: iterate over each object key to display inputfields
 
   render() {
     const { personal, work, education, handler } = this.props;
