@@ -1,5 +1,6 @@
 import { Component } from "react";
 import InputForm from "./components/inputForm";
+import DisplayForm from "./components/displayForm";
 import "./styles/index.css";
 
 class App extends Component {
@@ -80,12 +81,19 @@ class App extends Component {
 
   render() {
     return (
-      <InputForm
-        personal={this.state.personal}
-        work={this.state.work}
-        education={this.state.education}
-        handler={this.onChangeHandler}
-      />
+      <div className="app">
+        <InputForm
+          personal={this.state.personal}
+          work={this.state.work}
+          education={this.state.education}
+          handler={this.onChangeHandler}
+        />
+        <DisplayForm
+          personal={this.state.personal}
+          work={this.state.work}
+          education={this.state.education}
+        />
+      </div>
     );
   }
 }

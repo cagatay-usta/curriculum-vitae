@@ -3,10 +3,16 @@ body {
   justify-content: start;
 }
 
-#input-form-container {
-  height: 842px;
+.app {
+  display: flex;
+
+}
+
+#input-form-container, #display-form-container {
   width: 595px;
   border: 1px solid darkblue;
+  padding: 1rem;
+  margin: 2rem;
 
   display: flex;
   flex-direction: column;
