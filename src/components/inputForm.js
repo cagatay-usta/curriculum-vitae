@@ -13,15 +13,18 @@ class InputForm extends Component {
   render() {
     const { personal, work, education, handler } = this.props;
     return (
-      <>
-        <InputField
-          placeholder="full name"
-          value={personal.fullName}
-          onChange={handler}
-          fieldId="full-name"
-          category="personal"
-          field="fullName"
-        />
+      <div id="input-form-container">
+        
+        <div id="personal-input-container">
+          <InputField
+            placeholder="full name"
+            value={personal.fullName}
+            onChange={handler}
+            fieldId="full-name"
+            category="personal"
+            field="fullName"
+          />
+        </div>
 
         <div id="work-input-container">
           {work.map((listItem, index) => {
@@ -62,7 +65,7 @@ class InputForm extends Component {
             });
           })}
         </div>
-      </>
+      </div>
     );
   }
 }

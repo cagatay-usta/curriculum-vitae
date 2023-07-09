@@ -1,4 +1,18 @@
+body {
+  display: flex;
+  justify-content: start;
+}
+
+#input-form-container {
+  height: 842px;
+  width: 595px;
+  border: 1px solid darkblue;
+
+  display: flex;
+  flex-direction: column;
+}
+
 input {
-  padding: 2rem;
-  border: 2rem solid red
+  width: 80%;
+  margin: .3rem;
 }
