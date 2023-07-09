@@ -48,7 +48,7 @@ class App extends Component {
           start: "2009",
           end: "2012",
           description:
-            "SSpecialized in crafting code that defied all logic and caused professors to question their career choices.",
+            "Specialized in crafting code that defied all logic and caused professors to question their career choices.",
         },
       ],
     };

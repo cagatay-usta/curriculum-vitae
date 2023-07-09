@@ -14,19 +14,27 @@ class InputForm extends Component {
     const { personal, work, education, handler } = this.props;
     return (
       <div id="input-form-container">
-        
         <div id="personal-input-container">
-          <InputField
-            placeholder="full name"
-            value={personal.fullName}
-            onChange={handler}
-            fieldId="full-name"
-            category="personal"
-            field="fullName"
-          />
+          <h2>Personal Details</h2>
+          {Object.keys(personal).map((item, index) => {
+            return (
+              <div key={index}>
+                <InputField
+                  placeholder={item}
+                  value={personal[item]}
+                  onChange={handler}
+                  fieldId={`personal-${item}${index}`}
+                  category="personal"
+                  field={item}
+                />
+              </div>
+            );
+          })}
         </div>
 
         <div id="work-input-container">
+          <h2>Work Experience</h2>
+
           {work.map((listItem, index) => {
             return Object.keys(listItem).map((item, number) => {
               return (
@@ -47,6 +55,8 @@ class InputForm extends Component {
         </div>
 
         <div id="education-input-container">
+          <h2>Education</h2>
+
           {education.map((listItem, index) => {
             return Object.keys(listItem).map((item, number) => {
               return (
