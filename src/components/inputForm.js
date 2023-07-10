@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import InputField from "./inputField";
-
-// creates the form to enter data
-// manages the amount and behavior of input fields
+import InputButton from "./inputButtons";
 
 class InputForm extends Component {
   constructor(props) {
@@ -10,7 +8,7 @@ class InputForm extends Component {
   }
 
   render() {
-    const { personal, work, education, handler } = this.props;
+    const { personal, work, education, handler, buttonHandler } = this.props;
     return (
       <div id="input-form-container">
         <div id="personal-input-container">
@@ -51,6 +49,18 @@ class InputForm extends Component {
               );
             });
           })}
+          <InputButton
+            type="add"
+            category="work"
+            buttonHandler={buttonHandler}
+          />
+          {work.length > 1 ? (
+            <InputButton
+              type="delete"
+              category="work"
+              buttonHandler={buttonHandler}
+            />
+          ) : null}
         </div>
 
         <div id="education-input-container">
@@ -73,6 +83,18 @@ class InputForm extends Component {
               );
             });
           })}
+          <InputButton
+            type="add"
+            category="education"
+            buttonHandler={buttonHandler}
+          />
+          {education.length > 1 ? (
+            <InputButton
+              type="delete"
+              category="education"
+              buttonHandler={buttonHandler}
+            />
+          ) : null}
         </div>
       </div>
     );

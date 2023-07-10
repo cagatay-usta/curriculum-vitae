@@ -55,6 +55,7 @@ class App extends Component {
     };
 
     this.onChangeHandler = this.onChangeHandler.bind(this);
+    this.buttonHandler = this.buttonHandler.bind(this);
   }
 
   onChangeHandler(e) {
@@ -77,6 +78,24 @@ class App extends Component {
     }
   }
 
+  buttonHandler(e) {
+    const [type, category] = e.target.getAttribute("data-category").split("-");
+    this.setState((prevState) => {
+      if (type === "add") {
+        const keys = Object.keys(prevState[category][0]);
+        const keysObject = {};
+        for (let key of keys) {
+          keysObject[key] = "";
+        }
+        const newCategory = [...prevState[category], keysObject];
+        return { [category]: newCategory };
+      } else if (type === "delete") {
+        const newCategory = prevState[category].slice(0, -1);
+        return { [category]: newCategory };
+      } else return null;
+    });
+  }
+
   render() {
     return (
       <div className="app">
@@ -85,6 +104,7 @@ class App extends Component {
           work={this.state.work}
           education={this.state.education}
           handler={this.onChangeHandler}
+          buttonHandler={this.buttonHandler}
         />
         <DisplayForm
           personal={this.state.personal}
